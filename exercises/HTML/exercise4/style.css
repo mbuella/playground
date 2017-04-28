@@ -1,0 +1,395 @@
+/**
+	Main Style File (CSS) for exercise4.html
+
+	Author: Buella, Marlon B.
+	Date: February 3, 2017
+
+**/
+body {
+	font-family: "Lucida Sans Unicode";
+	margin: 0;
+	position: relative;
+}
+
+h1, h2, h3 {
+	color: #FFE4E1;	
+}
+
+header {
+	background: url("images/banner-bg.jpg") repeat-x;
+	background-position: 50% 15%;
+	position: relative;
+}
+
+header a {
+	text-decoration: none;
+}
+
+header .brand-name {
+	font-size: x-large;
+	display: inline-block;
+	margin: 30px 100px;
+}
+
+/* 
+	Common styles for the navigation links in header.
+*/
+
+header nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav li {
+	display: inline;
+}
+
+/*styling for the first nav only*/
+header > nav:first-child {
+	background: #ADD8E6;
+	opacity: 0.5;
+}
+
+header > nav:first-child a {
+	color: black;
+}
+
+/*main-menu specific styles*/
+
+header .main-menu {
+	margin: 30px 100px;
+	float: right;
+}
+
+header .main-menu li {
+	padding: 10px;
+}
+
+header .main-menu li:hover {
+	background: black;
+}
+
+header .main-menu li:hover a {
+	color: #ADD8E6;
+}
+
+/*sub-menu specific styles*/
+
+header .sub-menu {
+	display: block;
+	background: #556B2F;
+	padding: 2px;
+	margin: 0 100px;
+}
+
+header .sub-menu li {
+	padding: 10px;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+header .sub-menu li.active {
+	background: #743833;
+}
+
+header .sub-menu li:hover {
+	background: #FFE4E1;	
+}
+
+header .sub-menu li:hover a {
+	color: #743833;
+	font-weight: bold;
+}
+
+header .sub-menu li a {
+	color: #FFE4E1;
+    margin: 13px 10px;
+    display: inline-block;
+}
+
+/*styling clearfix*/
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;	
+}
+
+/*hero caption styling*/
+
+.hero-caption {
+	text-align: center;
+	margin: 20px;
+	padding: 50px;
+}
+
+.hero-caption h1 {
+	margin:	0;
+	font-family: "Satisfy";
+	font-size: 3em;
+    text-shadow: 3px 3px 9px #2F4F4F;
+}
+
+.hero-caption h2 {
+	margin:	0;
+}
+
+/*body and footer*/
+
+main, .footer-1, .footer-2 {	
+	padding: 0px 100px;
+}
+
+/*main body of the page*/
+/*left section*/
+
+main {
+	min-height: 1000px;/*
+    width: 1150px;
+    display: block;
+    margin: auto;*/
+}
+
+main h1 {
+	color: black;
+}
+
+section.left {
+	width: 65%;
+	float: left;
+/*	box-sizing: border-box;*/
+}
+
+/*headline text in the feautured article*/
+
+#featured-msg {
+	float: left;
+	font-weight: bold;
+	font-size: large;
+}
+
+/*date info of article*/
+
+.article-date, .article p {
+	font-size: small;
+}
+
+.article-date {
+	color: gray;
+}
+
+#featured-msg + span {
+	margin-right: -20px;
+}
+
+.article, .featured {
+    overflow: auto;
+}
+
+.article {
+    margin: 10px 40px;
+    padding: 20px;
+}
+
+.left button {
+	width: 80px;
+	height: 40px;
+	border: 0;
+	border-radius: 0;
+	background: #006400;
+	color: #FFE4E1;
+    margin-top: 10px;
+    display: block;
+    cursor: pointer;
+}
+
+.left h1 {
+	margin: 0;
+}
+
+.left img {
+    width: 625px;/*
+    display: block;
+    margin: auto;*/
+}
+
+.featured {
+	margin-left: -20px;
+	margin-right: -20px;
+	margin-top: 10px;
+	padding: 20px;
+	background: url(http://www.freetexturesdownload.com/download/Leaf-Free-Textures-15081.jpg)
+				top/200px;
+}
+
+.left hr {
+    margin-left: 20px;
+    margin-right: 20px;	
+}
+
+/*pagination at the bottom*/
+
+.pagination {
+	background-color: #90EE90;
+	margin: 20px;
+	display: block;
+	padding: 10px;
+}
+
+.pagination li {
+	display: inline-block;
+    border-bottom: 2px solid #90EE90;
+	/*margin-left: -10px;*/
+	padding: 1px 10px;
+}
+
+.pagination li a {
+	text-decoration: none;
+	color: gray;	
+}
+
+.pagination li:hover {
+    border-bottom: 2px solid darkslategray;
+    box-sizing: border-box;
+}
+
+/*right section*/
+
+section.right {
+	width: 35%;
+	float: right;
+	box-sizing: border-box;
+}
+
+.right div {
+	padding: 20px;	
+	background: #8FBC8B;
+}
+
+.right div.search-box {
+	background-color: #1E90FF;
+}
+
+.right div.search-box h3 {
+	margin: 0;
+	color: #FFE4E1;
+}
+
+.search-box form {
+	margin: 10px 0;
+
+}
+
+.search {
+	width: 83%;
+	height: 25px;
+	padding: 5px 10px;
+	border-radius: 4px 0 0 4px;
+	border: 0;
+}
+
+.search-box button {
+	width: 10%;
+	height: 35px;
+    vertical-align: top;
+	border-radius: 0 4px 4px 0;
+	border: none;    background: url(https://www.shareicon.net/download/2015/08/23/89638_search_512x512.png) no-repeat center/20px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.right div h3 {
+	color: #2F4F4F;
+	margin: 0;
+}
+
+/*
+	Apply different style to a list named .sub-menu.
+*/
+
+.right .sub-menu {
+	margin-left: -40px;
+}
+
+.right .sub-menu li {
+	list-style-type: none;
+	border-top: 1px solid;
+	padding: 10px 10px 10px 20px;
+	color: #2F4F4F;
+}
+
+/*Footer of the document*/
+
+.footer-1 {
+	height: 300px;
+	background: #72547F;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.footer-1 > div {
+	display: inline-block;
+	width: 33%;
+	min-height: 300px;
+	box-sizing: border-box;
+	vertical-align: top;
+	float: left;
+	padding: 20px;
+}
+
+.footer-1 img {
+	width: 50px;
+	margin: 0;
+}
+
+/*
+	Align the first column of the footer
+	with the .sub-menu in the header section.
+*/
+
+.footer-1 div:first-of-type {
+	padding: 20px 20px 20px 0;	
+}
+
+/*
+	Add left and right borders to the second column.
+*/
+
+.footer-1 div:nth-of-type(2) {
+	border-left: 1px solid #32153F;
+	border-right: 1px solid #32153F;
+}
+
+.footer-1 div p {
+	margin: 0;
+}
+
+.footer-1 ul {
+	padding: 0;
+}
+
+.footer-1 li {
+	list-style-type: none;
+	border-bottom: 1px solid;
+	padding: 10px 10px 10px 15px;	
+}
+
+.footer-2 {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	background: #32153F;
+	color: #72547F;
+}
+
+#caret {
+	float: right;
+	font-weight: bold;
+	font-size: large;
+}
+
+#caret a {
+	color: inherit;
+	text-decoration: none;
+}

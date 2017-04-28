@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Viewports and media queries</title>
+	<meta 	name="viewport"
+			content="width=device-width, initial-scale=1.0">
+	<style>
+		div {
+			box-sizing: border-box;
+			border: 1px solid black;
+		}
+		div > p {
+			width: 100%;
+			float: left;
+			padding-right: 10px;
+		}
+
+		.clear:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		/* If we view the page on a mobile phone */
+		span:after {
+			content: "mobile";
+			font-weight: bold;
+		}
+
+		/* If we view the page on a tablet */
+		@media only screen and (min-width: 600px) {
+			span:after {
+				content: "tablet";
+			}
+			div > p {
+				width: 50%;
+			}
+		}
+
+		/* If we view the page on a desktop */
+		@media only screen and (min-width: 768px) {
+			span:after {
+				content: "desktop";
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>Device Viewport Test</h1>
+	<span>You are currently viewing this page on </span>
+
+	<div class="clear">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</body>
+</html>

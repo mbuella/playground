@@ -1,0 +1,91 @@
+/*
+	Layout settings for tablet devices
+*/
+
+
+@media only screen and (max-width: 960px) {
+
+	#home {
+    	background-position: bottom center;	
+	}
+
+	#about {
+    	background-position: bottom center;	
+    	background-size: cover;
+    	height: 500px;
+	}
+
+	#about div {
+    	width: 95%;
+	}
+
+	#home div {
+	    width: 60%;
+   		transform: translate(-50%,-78%);
+	}
+
+	#services {		
+    	height: auto;
+	}
+	
+	#about > div > h1,
+	#services h1,
+	#projects > div > h1,
+	#contact h1
+	 {	
+	    font-weight: normal;
+	    font-size: 4vw;
+	    margin-bottom: 15px;
+	}
+
+	#services > div {
+    	width: 100%;	
+	    margin-top: 5px;
+	    margin-bottom: 0;
+	
+	}
+
+	#services > div > div + div {
+    	width: 91%;
+	}
+
+	.right p,
+	#about > div > p,
+	#services > div > div + div p {
+		font-size: 1.5vw;
+	}
+
+	#projects > div {
+		margin-top: 0;
+   		width: 100%;
+	}
+
+	#projects > div > h1 {
+    	margin-top: 0;
+	}
+
+	#gallery {
+		height: auto;
+	}
+
+	#gallery > div {
+    	width: 99%;
+	}
+
+	#gallery > div > img {
+    	width: 100%;
+	}
+
+	#contact {
+		text-align: center;
+	}
+
+	#contact > h1 {
+    	margin-top: 50px;
+	}
+
+	footer > div {
+	    width: 100%;	
+	    text-align: center;	
+	}
+}

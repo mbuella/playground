@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Practice</title>
+	<!-- External css and js files -->
+	<style>		
+		input#numInput {
+			width: 400px;
+			height: 50px;
+			text-align: right;
+			padding: 5px;
+			font-size: xx-large;
+			background-color: black;
+			color: yellow;
+			border: none;
+		}
+		button {
+			width: 100px;
+			height: 100px;
+			font-size: x-large;
+			font-weight: bold;
+			margin: 0;
+			background-color: white;
+			border: none;
+			cursor: pointer;
+		}
+		button.optr {
+			color: blue;
+		}
+		button:hover {
+			border: 1px solid black;
+		}
+		button:active {
+			background-color: black;
+			color: white;
+		}
+		button.optr:active {
+			background-color: blue;
+			color: white;
+		}
+		button:visited {
+			border: none;
+		}
+		button#equals {
+			color: brown;
+		}
+		button#clear {
+			width: 400px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 id="header">Simple Calculator using Javascript</h1>
+
+	<input id="numInput" readonly></input>
+	<br>
+
+	<button class="num" onclick="insertNum(1)">1</button>
+	<button class="num" onclick="insertNum(2)">2</button>
+	<button class="num" onclick="insertNum(3)">3</button>
+	<button class="optr" onclick="pressOp('/')">&divide;</button>
+	<br>
+	<button class="num" onclick="insertNum(4)">4</button>
+	<button class="num" onclick="insertNum(5)">5</button>
+	<button class="num" onclick="insertNum(6)">6</button>
+	<button class="optr" onclick="pressOp('*')">&times;</button>
+	<br>
+	<button class="num" onclick="insertNum(7)">7</button>
+	<button class="num" onclick="insertNum(8)">8</button>
+	<button class="num" onclick="insertNum(9)">9</button>
+	<button class="optr" onclick="pressOp('-')">-</button>
+	<br>
+	<button class="num" onclick="insertNum('.')">.</button>
+	<button class="num" onclick="insertNum(0)">0</button>
+	<button id="equals" onclick="executeOp()">=</button>
+	<button class="optr" onclick="pressOp('+')">+</button>
+	<br>
+	<button id="clear" onclick="clearDisplay()">CE</button>
+
+	<script type="text/javascript">
+		//global variables
+		var operator;
+		var save;
+		var temp;
+		var evald;
+		//textbox display
+		var display = document.getElementById("numInput");
+
+		//set display to 0
+		clearDisplay();
+		//function to input digit to text input
+		function insertNum(num) {
+			//check if the display can be cleared
+			if(evald == true){
+				display.value = '0';
+				evald = false;
+			}
+			//if the user presses 0 multiple times 
+			//we need to show only one 0 on the screen
+			if(parseInt(display.value) == 0) {
+				console.log(num);
+				display.value = '';
+			}
+			//append input on the text box
+			display.value += num;		
+		}
+		//triggered when user presses operators (+,-,*,/)
+		function pressOp(op) {/*		
+			if(op == operator) {
+				temp = 0;
+				console.log(op + " " + save + " " + temp);
+				executeOp();
+			}*/
+			//put the value of the textbox to save variable
+			//as a number
+			save = parseFloat(display.value);
+			//save the pressed operator sign to the operator
+			//variable 	
+			operator = op;
+			//set the evald to true, second num is ready to
+			//be input
+			evald = true;
+		}
+		//triggered when user presses the equal sign
+		function executeOp() {
+			//put the value of the textbox to temp variable
+			temp = parseFloat(display.value);
+			//perform the operation depending on its sign
+			//switch is used
+			switch(operator) {
+				case '+':
+					//replace the save value with the operation
+					//result
+					save = save + temp;
+					break;
+				case '-':
+					save = save - temp;
+					break;
+				case '*':
+					save = save * temp;
+					break;
+				case '/':
+					save = save / temp;
+					break;
+				default:
+					console.log('Error occured');
+			}
+			operator = '';
+			//display save value to box
+			display.value = save;
+			//set the evald to true, first num is ready to
+			//be input
+			evald = true;
+		}
+
+		//function to clear the text box
+		function clearDisplay() {
+			operator = '';
+			save = 0;
+			temp = 0;
+			evald = true;
+			display.value = save;
+		}
+	</script>
+</body>
+</html>

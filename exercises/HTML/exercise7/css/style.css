@@ -1,0 +1,284 @@
+/*
+	Global styling
+*/
+
+h1, h3 {
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+
+/*
+	Left part general styling
+*/
+
+.left {
+	width: 200px;
+	height: 100%;
+	background: #331E38;
+	position: fixed;
+	float: left;
+}
+
+/* Header section (left part) */
+
+/*logo*/
+.left > img {
+	width: 130px;
+	height: 130px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+/*menu*/
+.left > ul {
+	width: 130px;
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.left li {
+	line-height: 3em;
+	border-bottom: 1px solid white;
+}
+
+.left li > a {
+	text-decoration: none;
+	color: white;
+}
+
+.left li:hover {
+	font-size: 1.5em;
+	border-bottom: 0;
+}
+
+.left li:hover a {
+	color: yellow;	
+}
+
+/*
+	Right part general styling
+*/
+
+.right {
+    margin-left: 200px;
+	float: right;
+}
+
+.right section {
+	height: 700px;
+}
+
+/* Slider/home section */
+
+#home {
+	background: url("http://www.gratisography.com/pictures/346_1.jpg") no-repeat top left/cover;
+	position: relative;
+}
+
+#home div {
+	position: absolute;
+	width: 40%;
+	height: auto;
+	text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+	border: 5px solid white;
+	padding: 20px 30px;
+}
+
+#home h1 {
+	font-size: 2em;
+	letter-spacing: 1px;
+}
+
+
+/* About section */
+
+#about {
+	background: linear-gradient(
+					rgba(255, 0, 0, 0.45), 
+					rgba(255, 0, 0, 0.45)
+				),
+				url("http://www.gratisography.com/pictures/302_1.jpg") no-repeat top left/cover;
+}
+
+#about div {
+	width: 500px;
+    /*width: 50%;*/
+}
+
+#about div h1 {
+	font-size: 4em;
+	font-weight: normal;
+}
+
+#about div p {
+	font-size: .95em;	
+}
+
+
+/* Services section */
+
+#services {
+	height: 300px;
+	background: #423d2d;
+}
+
+#services h1, h3 {
+	margin: 0;
+}
+
+#services h1 {
+	color: #9C9681;
+	font-size: 4em;
+}
+
+#services > div {
+	width: 30%; 
+	margin: 30px 10px;
+	float: left; 
+}
+
+#services > div > div > h3 {
+	font-size: 1.5em;
+	color: salmon;
+	text-transform: capitalize;
+}
+
+#services > div > div > p {
+	font-size: 0.8em;
+	line-height: 1.2em;
+}
+
+#services > div > div {
+	float: left;
+}
+
+#services > div > div + div {
+	width: 80%;
+	float: right;
+}
+
+#services > div > div > img {
+	width: 50px; 
+	height: 50px; 
+}
+
+/* Projects section */
+
+#projects {
+	height: 300px;
+	background: url(http://www.gratisography.com/pictures/214_1.jpg) center right/cover no-repeat;
+}
+
+#projects div {
+	width: 500px;
+	margin-top: 50px;
+}
+
+#projects div h1 {
+	font-size: 4em;
+	font-weight: normal;
+}
+
+/* Gallery section */
+
+#gallery {
+	height: 400px; 
+	background: #B5B4C7;
+}
+
+#gallery > div {
+	width: 22%; 
+	margin: 0 10px;
+	float: left;
+}
+/*image width not part of intructions - ask teacher*/
+#gallery > div > img {
+	border-radius: 3px; 
+	width: 240px;
+}
+
+#gallery > div > h3, h4 {
+	color: #585671;
+	text-transform: capitalize;
+	margin: 10px 0;	
+	font-size: 1.15em;	
+}
+
+#gallery > div > h3 {
+	font-size: 1.5em;	
+}
+
+#gallery > div > p {
+	font-size: 0.8em; 
+	line-height: 1.2em;
+	margin: 10px 0;
+}
+
+/* Contact section */
+
+#contact {
+	background: linear-gradient(
+					rgba(0, 0, 0, 0.45), 
+					rgba(0, 0, 0, 0.45)
+				),
+				url("https://thumbs.dreamstime.com/z/rows-shelves-residential-mailboxes-rural-setting-maui-hawaii-52263917.jpg") center left/cover no-repeat;
+	height: 200px;
+	text-align: right;
+}
+
+#contact > h1 {
+	font-size: 4em;
+	font-weight: normal; 
+}
+
+#contact > h1, 
+#contact > p {
+	margin-top: 0;
+} 
+
+/* Footer section */
+
+footer {
+	background: #C2095A;
+	font-size: 0.8em;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+footer > div {
+    vertical-align: middle;
+	float: left;
+}
+
+footer > div + div {
+	margin-top: 10px;
+	float: right;
+}
+
+footer > div > a > img {
+	width: 20px;
+	margin-left: 5px;
+}
+
+footer > div > a {
+	text-decoration: none;
+}
+
+
+
+/*clear floats*/
+.clear:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+

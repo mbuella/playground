@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CodeMagic!</title>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			background: cornsilk;
+		}
+
+		#codewindow, #codewindow .row {
+			height: 100%;
+			max-width: 700px;
+			padding: 20px;
+		}
+
+		#codewindow .row {/*
+			border: 1px solid;
+			margin: 40px;*/
+		}
+
+		#codewindow .row > div {/*
+			border: 1px solid;*/
+			height: 50%; /*50% on tablet and mobile*/
+			max-height: 500px;
+		}
+
+		#codewindow .row > div .panel {
+			height: 100%;
+			border-radius: 0;
+		}
+
+		#codeview,#htmlview {
+			padding: 0;
+		}
+
+		#codeview div.panel,
+		#codeview div.panel-body {
+			height: 100%;
+		}
+
+		#codeview textarea.well {
+			width: 100%;
+			height: 65%;
+			background-color: rgb(39,40,34);
+			color: lightblue;
+			font-family: 'Courier New';
+			overflow: auto;
+			word-break: break-all;
+			resize: none;
+			padding: 10px;
+		}
+
+		#htmlview div.panel-body {
+			overflow: auto;
+			word-break: break-all;			
+		}
+
+		.row > div .panel-heading {
+			background-color: brown;
+			color: pink;
+		}
+
+		#codeview div.panel-body {
+			padding-top: 0;
+		}
+
+		/*tablets*/
+		@media only screen and (min-width: 768px) {
+		}
+
+		/*desktops*/
+		@media only screen and (min-width: 992px) {
+			#codewindow, #codewindow .row {
+				max-width: 800px;
+			}
+			#codewindow .row > div {
+				height: 100%; /*100% on desktops*/
+			}
+			#codeview textarea.well {
+				height: 83%;
+			}
+		}
+	</style>
+
+	<script>
+		$(document).ready(function() {
+
+			//set the start and end of selection to 0
+			var start = 0;
+			var end = 0;
+
+
+			$("#codeview textarea.well").focus(function(){
+				if($(this).val() == "Let's code!") {
+					$(this).val("");
+				}
+			});
+
+			//reflect what is typed here to the other screen
+			$("#codeview textarea.well").keyup(function(){
+				$("#htmlview div.panel-body").html
+				(
+					$(this).val()
+				);
+			});
+
+			$('.textFormat').on('click', function (e) {
+				var str1 = "";
+				var str2 = "";
+				var str3 = "";
+				var outputSlice = "";
+				var finalText = "";
+				var tagStart = "";
+				var tagEnd = "";
+
+				//get the start and end of selection
+				start = $('textarea').prop("selectionStart");
+				end = $('textarea').prop("selectionEnd");
+				console.log(start + " " + end);
+
+				//get the whole string in the textarea for splicing
+				var txtAreaVal = $("#codeview textarea.well").val();
+				//splice the string into three
+				str1 = txtAreaVal.slice(0,start);
+				str2 = txtAreaVal.slice(start,end);
+				console.log(str2);
+				str3 = txtAreaVal.slice(end);
+				tagStart = "<"+$(this).val()+">";
+				tagEnd = "</"+$(this).val()+">";
+				//determine the length of the selected text with format
+				outputSlice = tagStart + str2 + tagEnd;
+				//determine which tag was used
+				//add the format starting and end tag to the spliced string by appending
+				finalText = str1 + outputSlice + str3;
+
+				//display the 'formatted' string both in editor and display window
+				$("#htmlview div.panel-body").html(finalText);
+				$("#codeview textarea.well").val(finalText);	
+
+				$('textarea').focus();
+
+				if(start == end){
+					//if nothing is selected just insert the tag
+					$('textarea').prop("selectionStart",str1.length+tagStart.length);	
+					$('textarea').prop("selectionEnd",str1.length+tagStart.length);	
+				}
+				else { 
+					$('textarea').prop("selectionStart",str1.length);		
+					$('textarea').prop("selectionEnd",str1.length+outputSlice.length);	
+				}	
+			});
+
+/*			$(".pop").popover({ trigger: "manual" , html: true, animation:false})
+				.on("mouseenter", function () {
+					var _this = this;
+					$(this).popover("show");
+					$(".popover").on("mouseleave", function () {
+						$(_this).popover('hide');
+					});
+				}).on("mouseleave", function () {
+					var _this = this;
+					setTimeout(function () {
+						if (!$(".popover:hover").length) {
+			    			$(_this).popover("hide");
+						}
+					}, 300);
+				});*/
+		});
+	</script>
+
+
+</head>
+<body>
+	<div class="container-fluid" id="codewindow">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-6" id="codeview">
+				<!-- Code -->
+				<div class="panel panel-default">
+				  <div class="panel-heading">Code</div>
+				  <div class="panel-body">
+				    <!-- Well effect -->
+
+				    <button class="textFormat btn btn-link" value="strong">
+				    	<i class="fa fa-bold"></i>
+			    	</button>
+				    <button class="textFormat btn btn-link" value="em">    	
+				    	<i class="fa fa-italic"></i>
+				    </button>
+				    <button class="textFormat btn btn-link" value="a">
+				    	<i class="fa fa-link"></i>
+				    </button>
+				    <button class="textFormat btn btn-link" value="h1">
+				    	<i class="fa fa-header"></i>
+				    </button>
+				    <button class="textFormat btn btn-link" value="strike">
+				    	<i class="fa fa-strikethrough"></i>
+				    </button>
+
+<!-- 			<a href="#" class="pop" data-container="body" data-toggle="popover" data-placement="bottom" data-content="
+					<a><strong>A</strong></a>
+		<a href="#"><em>A</em></a>
+					">
+					T
+					</a>
+ -->
+		
+				    <textarea class="well">Let's code!</textarea>
+				  </div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-6" id="htmlview">
+				<!-- HTML -->
+				<div class="panel panel-default">
+				  <div class="panel-heading">HTML</div>
+				  <div class="panel-body">
+				    Look at me!
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

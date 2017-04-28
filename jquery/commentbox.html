@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Comment Box Using jQuery</title>
+	<!-- External css and js files -->
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style>
+		.container {
+			width: 40%;
+			height: auto;
+		}
+		#display p,#edit textarea {
+			width: 100%;
+			border: 1px solid;
+			height: auto;
+			padding: 10px;
+			margin-bottom: 10px;
+			word-wrap: break-word;
+		}
+		#edit {
+			display: none;
+		}
+		#edit button#save,
+		#display button#post{
+			float: right;
+		}
+		#saveMsg {
+			display: none;
+		}
+		.row button, #saveMsg {
+			height: 35px;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+
+			$("#display button#editBtn").click(function(){
+				$("#edit textarea").val(
+					$("#display p").text()
+				);
+
+				$("#display").hide();
+				$("#edit").show();
+			});
+
+			$("#edit button#save").click(function(){
+				$("#display p").text(
+					$("#edit textarea").val()
+				);
+
+				$("#edit").hide();
+				$("#display").show();
+				$("#saveMsg").show();
+			});
+
+			$("#edit button#cancel").click(function(){
+				$("#edit").hide();
+				$("#display").show();
+				$("#saveMsg").hide();
+			});
+
+
+			$("#edit textarea").focus(function(){
+				if($(this).val() == "What's on your mind?") {
+					$(this).val("");
+				}
+			});
+
+			$("#display button#post").click(function(){
+				$("#posts").append('<li class="list-group-item">' + $("#display p").text() + '</li>');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1 id="header">Simple Comment Box</h1>
+		<div class="row bs-callout bs-callout-primary" id="display">
+			<p>What's on your mind?</p>
+			<button id="editBtn" class="btn btn-info">Edit</button>
+			<button id="post" class="btn btn-warning">Post</button>
+			<span class="label label-success" id="saveMsg">
+				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				Saved!
+			</span>
+		</div>
+		<div class="row" id="edit">
+			<textarea></textarea>
+			<button id="cancel" class="btn btn-warning">Cancel</button>
+			<button id="save" class="btn btn-success">Save</button>
+		</div>
+	</div>
+	<div class="container" style="margin-top: 20px;">
+		<div class="row">
+			<ul class="list-group" id="posts">
+			  <!-- <li class="list-group-item">Cras justo odio</li> -->
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

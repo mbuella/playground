@@ -1,0 +1,7 @@
+p { 
+	margin-bottom: 1em; 
+} header, section, footer {
+	padding: 30px;
+	box-sizing: border-box;
+	color: white; 	
+} 

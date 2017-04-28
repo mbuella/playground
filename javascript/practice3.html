@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Practice</title>
+	<!-- External css and js files -->
+</head>
+<body>
+
+	<h1 id="header">JS Practice</h1>
+
+	<input type="number" id="num1"><br>
+	<input type="number" id="num2"><br>
+
+	<button id="add" onclick="plusNum()">Add</button>
+	<br>
+	<button id="minus" onclick="minusNum()">Subract</button>
+	<br>
+	<button id="minus" onclick="timesNum()">Multiply</button>
+	<br>
+	<button id="minus" onclick="divideNum()">Divide</button>
+
+	<script type="text/javascript">
+		function plusNum() {
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+			var sum = num1 + num2;
+
+			alert("The sum is " + sum + ".");
+		}
+		function minusNum() {
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+			var diff = num1 - num2;
+
+			alert("The sum is " + diff + ".");			
+		}
+		function timesNum() {
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+			var prod = num1 * num2;
+
+			alert("The sum is " + prod + ".");			
+		}
+		function divideNum() {
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+			var quo = num1 / num2;
+
+			alert("The sum is " + quo + ".");			
+		}
+	</script>
+</body>
+</html>

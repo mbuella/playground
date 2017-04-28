@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Practice</title>
+	<!-- External css and js files -->
+
+	<style>
+		input#numInput {
+			width: 400px;
+			height: 50px;
+			text-align: right;
+			padding: 5px;
+			font-size: xx-large;
+			background-color: black;
+			color: yellow;
+			border: none;
+		}
+		button {
+			width: 100px;
+			height: 100px;
+			font-size: larger;
+			font-weight: bold;
+			margin: 0;
+			background-color: white;
+			border: none;
+			cursor: pointer;
+		}
+		button:hover {
+			border: 1px solid black;
+		}
+		button:active {
+			background-color: black;
+			color: white;
+		}
+		button:visited {
+			border: none;
+		}
+	</style>
+</head>
+<body>
+
+	<h1 id="header">Simple Calculator using Javascript</h1>
+
+	<div>
+		
+	</div>
+
+	<input id="numInput" readonly value="0"></input>
+	<br>
+
+	<button onclick="insert(1)">1</button>
+	<button onclick="insert(2)">2</button>
+	<button onclick="insert(3)">3</button>
+	<button id="plus" onclick="insert('+')">+</button>
+	<br>
+	<button onclick="insert(4)">4</button>
+	<button onclick="insert(5)">5</button>
+	<button onclick="insert(6)">6</button>
+	<button id="minus" onclick="insert('-')">-</button>
+	<br>
+	<button onclick="insert(7)">7</button>
+	<button onclick="insert(8)">8</button>
+	<button onclick="insert(9)">9</button>
+	<button id="times"  onclick="insert('*')">&times;</button>
+	<br>
+	<button onclick="insert(0)">0</button>
+	<button onclick="insert('.')">.</button>
+	<button id="divide" onclick="insert('/')">&divide;</button>
+	<button onclick="evaluateExpr()">=</button>
+	<br>
+	<button onclick="clearInput()">Clear</button>
+
+	<script type="text/javascript">
+		//global variable to store the numbers
+		var expr = "";
+		var result = "";
+		//function to input digit to text input
+		function insert(str) {
+/*			if(isNaN(str)) {
+				num1 += parseFloat(str);
+			console.log("Operator encountered: "+str);
+			console.log("First number: "+num1);
+			}*/
+			expr += str;
+			document.getElementById("numInput").value = expr;
+		}
+
+		//function to evaluate the expression in the input box 
+		function evaluateExpr() {
+			result = eval(expr);
+			document.getElementById("numInput").value = result;
+			expr = result;
+		}
+
+		//function to clear the input box
+		function clearInput(){
+			document.getElementById("numInput").value = "0";
+			//reset all variables
+			expr = "";
+			result = "";
+		}
+	</script>
+</body>
+</html>

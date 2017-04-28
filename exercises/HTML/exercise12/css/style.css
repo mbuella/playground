@@ -1,0 +1,238 @@
+body {
+    background: #FBFAF5;
+    font-family: 'EB Garamond',sans-serif;
+}
+
+header, main, footer {/*
+    margin: 0 auto;
+    max-width: 950px;*/
+    font-size: 16px;
+    line-height: 21px;
+    color: #38341c;
+    text-align: justify;
+}
+
+header h1 {
+    padding: 50px 0 15px;
+    text-align: center;/*
+    padding-left: 100px;*/
+	margin: 0;
+}
+
+header h1 span {
+    font-size: 36px;
+    line-height: 60px;/*
+    margin-left: -25%;
+    font-family: 'adobe-garamond-pro',sans-serif;*/
+    text-transform: capitalize;
+    color: #222;
+    font-weight: 300;/*
+    display: block;*/
+}
+
+header h1 span.novel {	
+    font-family: 'Merriweather',sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: bolder;
+    padding-left: 6%;
+}
+
+main .type h3 {
+	font-family: "Merriweather",sans-serif;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 5px;/*
+    margin: 0 0 5px 0;
+    padding: 15px 0 1px;
+    background: transparent url(../images/type_icons.gif) right 0 no-repeat;*/
+}
+
+main .type,
+main .time .columns {	
+    font-size: 15px;
+    line-height: 18px;
+    text-indent: 0;/*
+    margin: 0 0 10px 0;*/
+}
+
+main .intro {
+	border-top: 2px solid #d4583c;
+	padding-bottom: 30px;
+}
+
+main .intro .columns > div {
+	margin-top: 15px;
+}
+
+main .intro .novel-graph {/*
+	height: 340px;
+    background: url(../images/novel_graph.gif)
+    			no-repeat
+    			bottom center;
+	width: 20%;*/
+}
+
+main .intro .columns p,
+main .time .columns p {	
+    text-indent: 15px;
+}
+
+main .intro .columns p:first-child,
+main .time .columns p:first-child {
+    text-indent: 0;	
+}
+
+main .intro .columns p:first-child:first-letter {
+    float: left;
+    font-size: 72px;
+    line-height: 60px;
+    margin-right: 20px;
+    padding: 4px;
+    font-family: "Merriweather",sans-serif;
+    text-indent: 0;
+}
+
+main .type span.example a {
+    font-style: italic;
+    color: #d4583c;
+    text-decoration: none;
+    background: #f1f0eb;/*
+    padding: 2px 0px;*/
+}
+
+main h2,
+main .time h4 {/*	
+    border: 1px solid #d2d1c8;
+    border-width: 1px 0;*/
+    font-size: 20px;
+    line-height: 18px;/*
+    padding: 12px 0;
+    clear: both;
+    text-align: center;*/
+    font-weight: 300;/*
+    margin: 30px 0 20px;*/
+    font-style: italic;
+    font-variant: small-caps;
+    padding: 10px;
+    border: 1px solid #d2d1c8;
+    border-width: 1px 0;
+}
+
+/*main.container h2.text-center {
+
+}*/
+
+main.container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+main.container .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+main .types {/*
+	border: 1px solid black;*/
+	box-sizing: border-box;/*
+	padding: 10px;*/
+}
+main .types .type {/*
+	position: absolute;*/
+	height: auto;
+	border-bottom: .5px solid #d2d1c8;
+	padding: 5px;/*
+	border-width: 0;*/
+}
+
+main .types .type span {	
+    font-size: 12px;
+}
+
+main .time {
+    background: #ebeae4;
+    margin: 20px 0 40px;
+    padding: 30px 5% 0px;
+}
+
+main .time h4 {	
+    border-top: 0;
+    padding-top: 0;
+}
+
+main .time .columns {/*
+	columns: 2;*/
+	padding-bottom: 30px;
+}
+
+main .time .columns p {
+	margin-bottom: 0;
+}
+
+main .doubleup {	
+    margin: 30px 21px 40px;
+}
+
+footer.container {	
+	border-top: 1px solid #d2d1c8;
+	padding-top: 10px;
+    text-align: right;
+    font-size: 10px;
+    line-height: 14px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*Tablet-specific styles*/
+@media only screen and (min-width: 750px) {
+	header.container,
+	main.container,
+	footer.container {
+		width: 100%;
+	}
+
+	header h1 {
+		text-align: left;
+		padding-left: 5%;
+	}
+
+	main .intro .columns > div {
+		columns: 2;
+		margin-top: 30px;
+	}
+
+	main .types .type {
+    	padding: 10px;
+		height: 280px;
+	}
+
+	main .time .columns {
+		columns: 2;
+	}
+
+	main .doubleup {		
+    	margin: 30px 40px 40px;
+	}
+}	
+
+/*Desktop-specific styles*/
+
+@media only screen and (min-width: 970px) {
+	header.container,
+	main.container,
+	footer.container {
+		width: 950px;
+	}
+
+	header h1 {
+		font-size: 48px;
+   		padding: 90px 0 15px;
+	}
+
+	main .time .columns {
+		columns: 3;
+	}
+}

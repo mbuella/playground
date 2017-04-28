@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tuitt | Output 1</title>
+	<style>
+		.orange-square {
+			width: 100px;
+			height: 100px;
+			background-color: orange;
+		}
+
+		.blue-border {
+			border-style: solid;
+			border-width: 0px 10px;
+			border-color: blue;
+			box-sizing: border-box;
+		}
+
+		.cool-border {
+			border-radius: 0px 10px; 
+			border-style: solid;
+			border-width: 1px;
+			padding: 3px;
+		}
+
+		.pink-circle {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			border-radius: 50%;
+		}
+
+		.centered-text {
+			text-align: center;
+			vertical-align: middle;
+			line-height: 100px;
+		}
+
+		.rect-container {
+			position: relative;
+		    text-align: center;
+		}
+
+		.rectangle {
+			width: 400px;
+			height: 100px;
+			border-style: solid;
+			border-width: 1px;			
+		}
+
+		.pos-lower-left {			
+		    position: absolute;
+		    bottom: 0px;
+		    left: 0px;
+		    width: 100px;
+		    height: 100px;
+		}
+
+		.pos-upper-left {
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		    width: 50px;
+		    height: 50px;
+		}
+
+		.pos-lower-right {
+		    position: absolute;
+		    bottom: 1px;
+		    right: 1px;
+		    width: 50px;
+		    height: 50px;
+		}
+
+		.rect-center {			
+		    position: absolute;
+		    left: 0;
+		    top: 25%;
+		    width: 100%;
+		}
+
+		.round-pic {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+		}
+
+		.rect-container .round-pic {
+		    position: absolute;	
+		    bottom: 1px;
+		    left: 1px;		
+		}
+		.rect-container .sound-text {
+		    position: absolute;	
+			top: 50%;
+		}
+
+		.rectangle2 {
+			width: 400px;
+			border: 1px solid;
+			text-align: center;
+		}
+
+		.pic-red {
+			width:	50px;
+			height:	100px;
+			display: block;
+			margin: auto;
+		}
+
+		.salmon {
+			background-color: #FA8072;
+			padding: 5px;
+			margin: 5px
+		}
+
+		.hrTable {
+			border-spacing: 0;
+			border-collapse: collapse;
+			text-align: center;
+		}
+
+		.hrTable th,
+		.hrTable td {
+			border: 1px solid;
+			padding: 10px 20px;
+		}
+
+		.hrTable th {
+			background-color: #000;
+			color: white;
+			border-color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="orange-square"></div>
+	<hr>
+
+	<div class="orange-square blue-border">
+	</div>
+	<hr>
+		
+	<div>
+		<span class="cool-border">
+			I have cool borders
+		</span>
+	</div>
+	<hr>
+		
+	<div class="pink-circle"></div>
+	<hr>
+	
+	<div class="pink-circle centered-text">
+		centered!
+	</div>
+	<hr>
+	
+	<div class="rect-container rectangle">		
+		<!-- <div class="rectangle"></div> -->
+		<img src="images/flowerborder.jpg" class="pos-lower-left">
+	</div>
+	<hr>
+	
+	<div class="rect-container rectangle">	
+		<img src="images/sun.gif" class="pos-upper-left">
+		<img src="images/coconut.jpg" class="pos-lower-right">
+	</div>
+	<hr>
+
+	<div class="rect-container rectangle">		
+		<img src="images/sun.gif" class="pos-upper-left">
+		<img src="images/coconut.jpg" class="pos-lower-right">
+		<div class="rect-center">Summer Paradise!</div>
+	</div>
+	<hr>
+
+	<img src="images/dog.jpg" class="round-pic">
+	<hr>
+
+	<div class="rect-container rectangle">	
+		<img src="images/dog.jpg" class="round-pic">
+		<span class="sound-text">Arf arf!</span>
+	</div>	
+	<hr>
+	
+	<div class="rectangle2">
+		<img src="images/red.jpg" class="pic-red">
+		<div>
+			<h1>Little Red Riding Hood</h1>
+			<p>"Little Red Riding Hood", or "Little Red Ridinghood", also known as "Little Red Cap" or simply "Red Riding Hood", is a European fairy tale about a young girl and a Big Bad Wolf.</p>
+		</div>
+	</div>
+	<hr>
+	
+	<div class="rectangle2">
+		<img src="images/red.jpg" class="pic-red">
+		<div class="salmon">
+			<h1>Little Red Riding Hood</h1>
+			<p>"Little Red Riding Hood", or "Little Red Ridinghood", also known as "Little Red Cap" or simply "Red Riding Hood", is a European fairy tale about a young girl and a Big Bad Wolf.</p>
+		</div>
+	</div>
+	<hr>
+
+	<table class="hrTable">
+		<tr>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Position</th>			
+		</tr>
+		<tr>
+			<td>Angeli</td>
+			<td>Lanuza</td>
+			<td>Instructor</td>
+		</tr>
+		<tr>
+			<td>Debbie</td>
+			<td>Villareal</td>
+			<td>HR Supervisor</td>
+		</tr>
+		<tr>
+			<td>Peejay</td>
+			<td>Saracho</td>
+			<td>Instructor</td>
+		</tr>
+	</table>
+</body>
+</html>
